@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hebei Tusheng Trade Co., Ltd. | Premium Baby Muslin & Custom Design</title>
+    <meta name="description" content="Hebei Tusheng Trade Co., Ltd. - Leading manufacturer of premium baby muslin blankets and custom textile solutions. Expert OEM/ODM services.">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #FDF9F3;
+            --primary-color: #7A8974; /* Muted Sage Green from Logo C */
+            --accent-color: #D4A373; /* Earthy Ochre from Logo C */
+            --text-color: #4A4A4A;
+            --light-text: #888888;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        /* --- Header --- */
+        header {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            height: 50px;
+            border-radius: 4px;
+        }
+
+        .logo span {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            font-size: 0.9rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .header-actions .btn {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            background: #fff;
+        }
+
+        .hero-content {
+            width: 45%;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--light-text);
+            font-style: italic;
+        }
+
+        .hero-image {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 60%;
+            height: 100%;
+            background: url('https://sc01.alicdn.com/kf/H64947c53f6f34d5d979ff006d394ab6aM.jpg') center/cover no-repeat;
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 18px 40px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 4px;
+            box-shadow: 0 10px 20px rgba(212, 163, 115, 0.3);
+            cursor: pointer;
+        }
+
+        /* --- Custom Design Hero Section --- */
+        .custom-hero {
+            padding: 120px 10%;
+            background: #f4f1ea; 
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .custom-hero-text {
+            flex: 1;
+        }
+
+        .custom-hero-text h2 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+        }
+
+        .custom-hero-text p {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            margin-bottom: 40px;
+        }
+
+        .custom-hero-image {
+            flex: 1.2;
+            position: relative;
+        }
+
+        .custom-hero-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+        }
+
+        .step-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .step-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-color);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            font-weight: 700;
+        }
+
+        /* --- Brand Values --- */
+        .values {
+            display: flex;
+            justify-content: space-around;
+            padding: 80px 10%;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .value-item img {
+            width: 60px;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .value-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .value-item p {
+            font-size: 0.9rem;
+            color: var(--light-text);
+        }
+
+        /* --- Product Grid --- */
+        .products {
+            padding: 100px 5%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--light-text);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 50px;
+        }
+
+        .product-card {
+            background: transparent;
+            border-radius: 0;
+            overflow: hidden;
+            transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .product-image {
+            height: 420px;
+            overflow: hidden;
+            background: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 25px 0;
+            text-align: left;
+            position: relative;
+        }
+
+        .product-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--text-color);
+            letter-spacing: 0.5px;
+            font-weight: 700;
+        }
+
+        .product-tag {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            display: block;
+            font-weight: 700;
+        }
+
+        .product-card::after {
+            content: 'View Collection';
+            position: absolute;
+            top: 180px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            opacity: 0;
+            transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            pointer-events: none;
+            border-radius: 2px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .product-card:hover::after {
+            opacity: 1;
+            top: 160px;
+        }
+
+        .product-card::after {
+            content: 'View Details';
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            opacity: 0;
+            transition: 0.3s;
+            pointer-events: none;
+            border-radius: 4px;
+        }
+
+        .product-card:hover::after {
+            opacity: 1;
+            bottom: 120px;
+        }
+
+        .product-price {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            font-family: 'Lato', sans-serif;
+        }
+
+        /* --- Factory Section --- */
+        .factory {
+            padding: 100px 10%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .factory-image {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .factory-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .factory-text {
+            flex: 1;
+        }
+
+        .factory-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .stat-item h4 {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+
+        /* --- B2B Section --- */
+        .b2b-cta {
+            padding: 100px 10%;
+            background: var(--primary-color);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .b2b-text {
+            width: 50%;
+        }
+
+        .b2b-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .b2b-btn {
+            border: 2px solid var(--white);
+            padding: 15px 35px;
+            font-weight: 700;
+            border-radius: 4px;
+        }
+
+        .b2b-btn:hover {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* --- Inquiry Form --- */
+        .inquiry {
+            padding: 100px 15%;
+            background: var(--bg-color);
+            text-align: center;
+        }
+
+        .inquiry-form {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            text-align: left;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group.full {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--light-text);
+        }
+
+        .form-group input, .form-group textarea {
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            font-family: inherit;
+            outline: none;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--primary-color);
+        }
+
+        .submit-btn {
+            grid-column: span 2;
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 18px;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 80px 5% 40px;
+            background: #fff;
+            border-top: 1px solid #eee;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .footer-col h4 {
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            color: var(--light-text);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            header { padding: 15px 5%; }
+            nav ul { display: none; }
+            .hero { padding: 50px 5%; flex-direction: column; text-align: center; height: auto; }
+            .hero-content { width: 100%; margin-bottom: 50px; }
+            .hero-content h1 { font-size: 2.8rem; }
+            .hero-image { position: relative; width: 100%; height: 400px; clip-path: none; margin-top: 30px; border-radius: 10px; }
+            .b2b-cta { flex-direction: column; text-align: center; gap: 40px; }
+            .b2b-text { width: 100%; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .custom-hero { flex-direction: column; text-align: center; gap: 40px; }
+            .step-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="https://sc02.alicdn.com/kf/A28fb42e9fece469eba0e2d4b16db529dk.png" alt="Hebei Tusheng Logo">
+            <span>Hebei Tusheng</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#custom">Custom Service</a></li>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#inquiry">B2B Inquiry</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="http://hbtusheng.en.alibaba.com" class="btn">Shop Alibaba</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="product-tag">Ethically Sourced & Hand-Designed</span>
+            <h1>Softness That Tells a Story</h1>
+            <p>"Whisper-light muslin blankets for your little one's big dreams."</p>
+            <a href="#custom" class="cta-btn" style="background: var(--primary-color);">Explore Custom Design</a>
+            <a href="#collections" class="cta-btn" style="background: transparent; border: 2px solid var(--accent-color); color: var(--accent-color); margin-left: 10px;">Shop Collections</a>
+        </div>
+        <div class="hero-image"></div>
+    </section>
+
+    <section class="custom-hero" id="custom">
+        <div class="custom-hero-text">
+            <span class="product-tag">OEM / ODM Specialists</span>
+            <h2>Your Vision, Our Craftsmanship.</h2>
+            <p>From custom hand-drawn prints to exclusive private labels and premium packaging, we help you build a brand that stands out in the luxury baby market.</p>
+            
+            <div class="step-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h4>Design</h4>
+                    <p>Share your concepts or choose from our exclusive print library.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h4>Source</h4>
+                    <p>Select from 100% organic cotton, bamboo, or custom blends.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h4>Brand</h4>
+                    <p>Custom woven labels, tags, and luxury eco-packaging.</p>
+                </div>
+            </div>
+        </div>
+        <div class="custom-hero-image">
+            <img src="https://sc02.alicdn.com/kf/A6cb47c0614b14d75b831bda89b784768C.png" alt="Customization Moodboard">
+        </div>
+    </section>
+
+    <section class="values">
+        <div class="value-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/2921/2921226.png" alt="Icon">
+            <h3>100% Organic Cotton</h3>
+            <p>Gentle on baby's delicate skin</p>
+        </div>
+        <div class="value-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="Icon">
+            <h3>Breathable Weave</h3>
+            <p>Prevents overheating for safe sleep</p>
+        </div>
+        <div class="value-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/2592/2592317.png" alt="Icon">
+            <h3>Artisanal Prints</h3>
+            <p>Unique, hand-drawn designs</p>
+        </div>
+    </section>
+
+    <section class="products" id="collections">
+        <div class="section-header">
+            <h2>Our Signature Collections</h2>
+            <p>From whimsical prints to elegant lace edges, discover the perfect layer for every moment.</p>
+        </div>
+
+        <div class="product-grid">
+            <!-- Product 1: Lace Edged -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://sc02.alicdn.com/kf/Af8da77871c1a423bab80701657df97e6w.png" alt="Lace Muslin Blanket">
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">6-Layer Premium</span>
+                    <h3>Vintage Lace Muslin</h3>
+                </div>
+            </div>
+            <!-- Product 2: Solid Color Bed -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://sc02.alicdn.com/kf/Aa9fd06c0c27f42848c249d8fc0bde3b5C.png" alt="Cotton Bed Blanket">
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Soft & Breathable</span>
+                    <h3>The Cloud Bed Blanket</h3>
+                </div>
+            </div>
+            <!-- Product 3: Geometric -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://sc01.alicdn.com/kf/H3c609b4d57144e30b4de708414ff5e0cc.jpg" alt="Geometric Collection">
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Modern Monochrome</span>
+                    <h3>The Geometric Set</h3>
+                </div>
+            </div>
+            <!-- Product 4: Fruit -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://sc01.alicdn.com/kf/Hdee7fc9c9b0c46ce8aa3ebd82e1af9e5M.jpg" alt="Fruit Collection">
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Playful & Sweet</span>
+                    <h3>The Pineapple Dreams</h3>
+                </div>
+            </div>
+            <!-- Product 5: Yellow Bed -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://sc01.alicdn.com/kf/Ha2799af9f7e849b581c024cf576d143fN.jpg" alt="Yellow Muslin Blanket">
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Summer Palette</span>
+                    <h3>Golden Hour Muslin</h3>
+                </div>
+            </div>
+            <!-- Product 6: Detailed Lace -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://sc02.alicdn.com/kf/A4dd0a3eff07f4594a9fc0e33ede819881.png" alt="Lace Detail">
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Intricate Craft</span>
+                    <h3>Artisanal Lace Detail</h3>
+                </div>
+            </div>
+            <!-- Product 7: Doudou Bear -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://sc02.alicdn.com/kf/A5905d18b578846ea8454030efffe776a0.png" alt="Doudou Bear Blanket">
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Minky Dot Series</span>
+                    <h3>Doudou Bear Comfort</h3>
+                </div>
+            </div>
+            <!-- Product 8: Crochet Doudou -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://sc02.alicdn.com/kf/Aa4bc2d3e8ab24d79b1059ccb683953095.png" alt="Crochet Doudou">
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Textured Luxury</span>
+                    <h3>Crochet Edge Doudou</h3>
+                </div>
+            </div>
+            <!-- Product 9: Floral Doudou -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://sc02.alicdn.com/kf/A212c1d82cb5146e385603b5078d017acx.png" alt="Floral Doudou">
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Sensory Comfort</span>
+                    <h3>Garden Floral Doudou</h3>
+                </div>
+            </div>
+            <!-- Product 10: Boho Tassel -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://sc02.alicdn.com/kf/Aedcd0d384dd14c309de20364d14eb0cfF.png" alt="Boho Tassel Blanket">
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Artisan Trim</span>
+                    <h3>Boho Tassel Collection</h3>
+                </div>
+            </div>
+            <!-- Product 11: Ruffle Edge -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://sc02.alicdn.com/kf/Af3d1adbe49934797bd199c0f9d6007eff.png" alt="Ruffle Edge Blanket">
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Soft & Romantic</span>
+                    <h3>Ruffle Trim Muslin</h3>
+                </div>
+            </div>
+            <!-- Product 12: Panda Adventure -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://sc01.alicdn.com/kf/H18b374595f014e0eb79783b081dd87b44.jpg" alt="Panda Adventure Quilt">
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Lightweight Summer</span>
+                    <h3>Panda Adventure Quilt</h3>
+                </div>
+            </div>
+            <!-- Product 13: Astronaut Space -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://sc01.alicdn.com/kf/H097db68b5d5d412c9d605699c2d67722e.jpg" alt="Astronaut Space Quilt">
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Whimsical Dreamer</span>
+                    <h3>Astronaut Space Quilt</h3>
+                </div>
+            </div>
+            <!-- Product 14: Dino World -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://sc01.alicdn.com/kf/Hde27a8d595414c8481b616c422427b10U.jpg" alt="Dino World Quilt">
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Playful Patterns</span>
+                    <h3>Dino World Quilt</h3>
+                </div>
+            </div>
+            <!-- Product 15: Zesty Orange -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://sc01.alicdn.com/kf/H2aaed16f4f0a417e935afa2f69133060Q.jpg" alt="Zesty Orange Quilt">
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Fresh & Sweet</span>
+                    <h3>Zesty Orange Quilt</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="factory">
+        <div class="factory-image">
+            <img src="https://sc02.alicdn.com/kf/Af8da77871c1a423bab80701657df97e6w.png" alt="Factory Detail">
+            <img src="https://sc02.alicdn.com/kf/Aa9fd06c0c27f42848c249d8fc0bde3b5C.png" alt="Production">
+            <img src="https://sc02.alicdn.com/kf/Ha2799af9f7e849b581c024cf576d143fN.jpg" alt="Quality Control">
+            <img src="https://sc02.alicdn.com/kf/A4dd0a3eff07f4594a9fc0e33ede819881.png" alt="Packaging">
+        </div>
+        <div class="factory-text">
+            <h2>Excellence in Every Thread</h2>
+            <p>Hebei Tusheng Trade Co., Ltd. combines decades of textile tradition with modern manufacturing standards. Based in the heart of China's textile hub, we pride ourselves on ethical production and meticulous quality control.</p>
+            <div class="stats">
+                <div class="stat-item">
+                    <h4>20+</h4>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h4>50+</h4>
+                    <p>Global Partners</p>
+                </div>
+                <div class="stat-item">
+                    <h4>100%</h4>
+                    <p>Natural Cotton</p>
+                </div>
+                <div class="stat-item">
+                    <h4>Custom</h4>
+                    <p>OEM/ODM Services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="b2b-cta">
+        <div class="b2b-text">
+            <h2>Wholesale & Trade</h2>
+            <p>Hebei Tusheng Trade Co., Ltd. is a leading exporter of premium baby textiles. We offer custom prints, private labeling, and worldwide shipping.</p>
+        </div>
+        <a href="http://hbtusheng.en.alibaba.com" class="btn">View Alibaba Store</a>
+    </section>
+
+    <section class="inquiry" id="inquiry">
+        <div class="section-header">
+            <h2>Direct Inquiry</h2>
+            <p>Interested in bulk orders or custom designs? Send us a message or reach out via <strong>WhatsApp/WeChat: 15931190831</strong></p>
+        </div>
+        <form class="inquiry-form">
+            <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label>Work Email</label>
+                <input type="email" placeholder="email@company.com" required>
+            </div>
+            <div class="form-group full">
+                <label>Subject</label>
+                <input type="text" placeholder="e.g., Bulk order for 6-layer muslin blankets">
+            </div>
+            <div class="form-group full">
+                <label>Message</label>
+                <textarea rows="5" placeholder="Tell us about your requirements..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Inquiry</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-logo">
+                <h2>Hebei Tusheng</h2>
+                <p>Premium textiles for the modern family. Designed in Hebei, loved worldwide.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                    <li><a href="#">Muslin Wraps</a></li>
+                    <li><a href="#">Gift Sets</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Wholesale</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><a href="mailto:admin@hebtusheng.com">admin@hebtusheng.com</a></li>
+                    <li><a href="mailto:erica@hebtusheng.com">erica@hebtusheng.com</a></li>
+                    <li>WhatsApp/WeChat: 15931190831</li>
+                    <li>WhatsApp/WeChat: 13931119083</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Hebei Tusheng Trade Co., Ltd. | hebtusheng.com
+        </div>
+    </footer>
+
+</body>
+</html>
