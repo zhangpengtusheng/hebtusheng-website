@@ -374,6 +374,123 @@
             bottom: 120px;
         }
 
+        /* --- Modal Styles --- */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: var(--bg-color);
+            width: 90%;
+            max-width: 1000px;
+            max-height: 90vh;
+            border-radius: 20px;
+            display: flex;
+            position: relative;
+            overflow: hidden;
+            animation: modalFade 0.4s ease;
+        }
+
+        @keyframes modalFade {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 10;
+            color: var(--primary-color);
+        }
+
+        .modal-left {
+            flex: 1;
+            background: #fff;
+        }
+
+        .modal-left img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-right {
+            flex: 1;
+            padding: 60px;
+            overflow-y: auto;
+        }
+
+        .modal-tag {
+            color: var(--accent-color);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .modal-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .modal-desc {
+            color: var(--light-text);
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+            border-top: 1px solid #eee;
+            padding-top: 30px;
+        }
+
+        .spec-label {
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: #999;
+        }
+
+        .spec-value {
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
+        .modal-cta {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 4px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            .modal-content { flex-direction: column; }
+            .modal-left { height: 300px; }
+            .modal-right { padding: 30px; }
+        }
+
         .product-price {
             font-size: 0.9rem;
             color: var(--light-text);
@@ -673,7 +790,7 @@
 
         <div class="product-grid">
             <!-- Product 1: Lace Edged -->
-            <div class="product-card">
+            <div class="product-card" onclick="openModal('Vintage Lace Muslin', '6-Layer Premium', 'Our signature vintage-inspired muslin with hand-stitched lace edges. Perfect for baby photography and special occasions.', 'https://sc02.alicdn.com/kf/Af8da77871c1a423bab80701657df97e6w.png', '100% Cotton', '120x120cm', '6 Layers', 'Hand-stitched Lace')">
                 <div class="product-image">
                     <img src="https://sc02.alicdn.com/kf/Af8da77871c1a423bab80701657df97e6w.png" alt="Lace Muslin Blanket">
                 </div>
@@ -683,7 +800,7 @@
                 </div>
             </div>
             <!-- Product 2: Solid Color Bed -->
-            <div class="product-card">
+            <div class="product-card" onclick="openModal('The Cloud Bed Blanket', 'Soft & Breathable', 'A large-scale muslin bed blanket designed for the whole family. Lightweight enough for summer, warm enough for layering.', 'https://sc02.alicdn.com/kf/Aa9fd06c0c27f42848c249d8fc0bde3b5C.png', '100% Cotton Muslin', '200x230cm', '4 Layers', 'Classic Plain Weave')">
                 <div class="product-image">
                     <img src="https://sc02.alicdn.com/kf/Aa9fd06c0c27f42848c249d8fc0bde3b5C.png" alt="Cotton Bed Blanket">
                 </div>
@@ -693,7 +810,7 @@
                 </div>
             </div>
             <!-- Product 3: Geometric -->
-            <div class="product-card">
+            <div class="product-card" onclick="openModal('The Geometric Set', 'Modern Monochrome', 'A contemporary take on traditional muslin. Features bold black and white geometric patterns that are perfect for modern nurseries.', 'https://sc01.alicdn.com/kf/H3c609b4d57144e30b4de708414ff5e0cc.jpg', '100% Organic Cotton', '120x120cm', '2 Layers', 'Breathable Weave')">
                 <div class="product-image">
                     <img src="https://sc01.alicdn.com/kf/H3c609b4d57144e30b4de708414ff5e0cc.jpg" alt="Geometric Collection">
                 </div>
@@ -703,7 +820,7 @@
                 </div>
             </div>
             <!-- Product 4: Fruit -->
-            <div class="product-card">
+            <div class="product-card" onclick="openModal('The Pineapple Dreams', 'Playful & Sweet', 'Bring a touch of tropical fun to your baby\'s sleep time. Soft, pre-washed cotton that gets softer with every wash.', 'https://sc01.alicdn.com/kf/Hdee7fc9c9b0c46ce8aa3ebd82e1af9e5M.jpg', 'Premium Cotton', '110x110cm', '2 Layers', 'Vibrant Print')">
                 <div class="product-image">
                     <img src="https://sc01.alicdn.com/kf/Hdee7fc9c9b0c46ce8aa3ebd82e1af9e5M.jpg" alt="Fruit Collection">
                 </div>
@@ -713,7 +830,7 @@
                 </div>
             </div>
             <!-- Product 5: Yellow Bed -->
-            <div class="product-card">
+            <div class="product-card" onclick="openModal('Golden Hour Muslin', 'Summer Palette', 'A warm, sun-drenched hue that brings comfort to any nursery. Made from high-density gauze for a luxurious feel.', 'https://sc01.alicdn.com/kf/Ha2799af9f7e849b581c024cf576d143fN.jpg', 'Soft Gauze', '120x120cm', '2 Layers', 'Solid Palette')">
                 <div class="product-image">
                     <img src="https://sc01.alicdn.com/kf/Ha2799af9f7e849b581c024cf576d143fN.jpg" alt="Yellow Muslin Blanket">
                 </div>
@@ -723,7 +840,7 @@
                 </div>
             </div>
             <!-- Product 6: Detailed Lace -->
-            <div class="product-card">
+            <div class="product-card" onclick="openModal('Artisanal Lace Detail', 'Intricate Craft', 'Fine craftsmanship meets baby comfort. Features a wide, intricate lace border that adds a vintage touch to your collection.', 'https://sc02.alicdn.com/kf/A4dd0a3eff07f4594a9fc0e33ede819881.png', 'Combed Cotton', '120x120cm', '6 Layers', 'Lace Border')">
                 <div class="product-image">
                     <img src="https://sc02.alicdn.com/kf/A4dd0a3eff07f4594a9fc0e33ede819881.png" alt="Lace Detail">
                 </div>
@@ -733,7 +850,7 @@
                 </div>
             </div>
             <!-- Product 7: Doudou Bear -->
-            <div class="product-card">
+            <div class="product-card" onclick="openModal('Doudou Bear Comfort', 'Minky Dot Series', 'Sensory stimulation meets soothing comfort. The 3D minky dots provide a calming tactile experience for babies.', 'https://sc02.alicdn.com/kf/A5905d18b578846ea8454030efffe776a0.png', 'Cotton + Minky', '110x75cm', 'Double Sided', '3D Dot Texture')">
                 <div class="product-image">
                     <img src="https://sc02.alicdn.com/kf/A5905d18b578846ea8454030efffe776a0.png" alt="Doudou Bear Blanket">
                 </div>
@@ -743,7 +860,7 @@
                 </div>
             </div>
             <!-- Product 8: Crochet Doudou -->
-            <div class="product-card">
+            <div class="product-card" onclick="openModal('Crochet Edge Doudou', 'Textured Luxury', 'A premium minky blanket with a delicate crochet edge. Durable, soft, and stylish—perfect for strollers and cribs.', 'https://sc02.alicdn.com/kf/Aa4bc2d3e8ab24d79b1059ccb683953095.png', 'Cotton + Minky', '100x80cm', 'Double Sided', 'Crochet Trim')">
                 <div class="product-image">
                     <img src="https://sc02.alicdn.com/kf/Aa4bc2d3e8ab24d79b1059ccb683953095.png" alt="Crochet Doudou">
                 </div>
@@ -753,7 +870,7 @@
                 </div>
             </div>
             <!-- Product 9: Floral Doudou -->
-            <div class="product-card">
+            <div class="product-card" onclick="openModal('Garden Floral Doudou', 'Sensory Comfort', 'Classic floral prints meet modern sensory design. A favorite for gifting and everyday nursery use.', 'https://sc02.alicdn.com/kf/A212c1d82cb5146e385603b5078d017acx.png', 'Cotton + Minky', '110x75cm', 'Double Sided', 'Floral Print')">
                 <div class="product-image">
                     <img src="https://sc02.alicdn.com/kf/A212c1d82cb5146e385603b5078d017acx.png" alt="Floral Doudou">
                 </div>
@@ -763,7 +880,7 @@
                 </div>
             </div>
             <!-- Product 10: Boho Tassel -->
-            <div class="product-card">
+            <div class="product-card" onclick="openModal('Boho Tassel Collection', 'Artisan Trim', 'Add an artistic flair to your nursery. These breathable muslin wraps feature handmade tassels for a unique boho look.', 'https://sc02.alicdn.com/kf/Aedcd0d384dd14c309de20364d14eb0cfF.png', 'Muslin Cotton', '120x120cm', '2 Layers', 'Boho Tassels')">
                 <div class="product-image">
                     <img src="https://sc02.alicdn.com/kf/Aedcd0d384dd14c309de20364d14eb0cfF.png" alt="Boho Tassel Blanket">
                 </div>
@@ -773,7 +890,7 @@
                 </div>
             </div>
             <!-- Product 11: Ruffle Edge -->
-            <div class="product-card">
+            <div class="product-card" onclick="openModal('Ruffle Trim Muslin', 'Soft & Romantic', 'Elegant and dreamy. Our double ruffle trim muslin wraps are the ultimate choice for newborn photography.', 'https://sc02.alicdn.com/kf/Af3d1adbe49934797bd199c0f9d6007eff.png', 'Soft Muslin', '110x110cm', '2 Layers', 'Double Ruffle')">
                 <div class="product-image">
                     <img src="https://sc02.alicdn.com/kf/Af3d1adbe49934797bd199c0f9d6007eff.png" alt="Ruffle Edge Blanket">
                 </div>
@@ -783,7 +900,7 @@
                 </div>
             </div>
             <!-- Product 12: Panda Adventure -->
-            <div class="product-card">
+            <div class="product-card" onclick="openModal('Panda Adventure Quilt', 'Lightweight Summer', 'A puffy, cloud-like summer quilt featuring adorable pandas. Breathable and warm without being heavy.', 'https://sc01.alicdn.com/kf/H18b374595f014e0eb79783b081dd87b44.jpg', 'Puffy Cotton', '110x110cm', 'Summer Quilt', 'Large Print')">
                 <div class="product-image">
                     <img src="https://sc01.alicdn.com/kf/H18b374595f014e0eb79783b081dd87b44.jpg" alt="Panda Adventure Quilt">
                 </div>
@@ -793,7 +910,7 @@
                 </div>
             </div>
             <!-- Product 13: Astronaut Space -->
-            <div class="product-card">
+            <div class="product-card" onclick="openModal('Astronaut Space Quilt', 'Whimsical Dreamer', 'Ignite their imagination with this space-themed quilt. Perfect for both nap time and play time.', 'https://sc01.alicdn.com/kf/H097db68b5d5d412c9d605699c2d67722e.jpg', 'Puffy Cotton', '110x110cm', 'Summer Quilt', 'Space Theme')">
                 <div class="product-image">
                     <img src="https://sc01.alicdn.com/kf/H097db68b5d5d412c9d605699c2d67722e.jpg" alt="Astronaut Space Quilt">
                 </div>
@@ -803,7 +920,7 @@
                 </div>
             </div>
             <!-- Product 14: Dino World -->
-            <div class="product-card">
+            <div class="product-card" onclick="openModal('Dino World Quilt', 'Playful Patterns', 'Vibrant colors and friendly dinosaurs make this quilt a favorite for active little ones.', 'https://sc01.alicdn.com/kf/Hde27a8d595414c8481b616c422427b10U.jpg', 'Puffy Cotton', '110x110cm', 'Summer Quilt', 'Dino Theme')">
                 <div class="product-image">
                     <img src="https://sc01.alicdn.com/kf/Hde27a8d595414c8481b616c422427b10U.jpg" alt="Dino World Quilt">
                 </div>
@@ -813,7 +930,7 @@
                 </div>
             </div>
             <!-- Product 15: Zesty Orange -->
-            <div class="product-card">
+            <div class="product-card" onclick="openModal('Zesty Orange Quilt', 'Fresh & Sweet', 'A refreshing fruit-themed quilt that brings summer vibes to the nursery. Soft, durable, and fade-resistant.', 'https://sc01.alicdn.com/kf/H2aaed16f4f0a417e935afa2f69133060Q.jpg', 'Puffy Cotton', '110x110cm', 'Summer Quilt', 'Fruit Theme')">
                 <div class="product-image">
                     <img src="https://sc01.alicdn.com/kf/H2aaed16f4f0a417e935afa2f69133060Q.jpg" alt="Zesty Orange Quilt">
                 </div>
@@ -929,5 +1046,60 @@
         </div>
     </footer>
 
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div class="modal-left">
+                <img id="modalImg" src="" alt="Product Detail">
+            </div>
+            <div class="modal-right">
+                <span id="modalTag" class="modal-tag"></span>
+                <h2 id="modalTitle" class="modal-title"></h2>
+                <p id="modalDesc" class="modal-desc"></p>
+                
+                <div class="specs-grid">
+                    <div>
+                        <p class="spec-label">Material</p>
+                        <p id="specMaterial" class="spec-value"></p>
+                    </div>
+                    <div>
+                        <p class="spec-label">Size</p>
+                        <p id="specSize" class="spec-value"></p>
+                    </div>
+                    <div>
+                        <p class="spec-label">Thickness</p>
+                        <p id="specLayers" class="spec-value"></p>
+                    </div>
+                    <div>
+                        <p class="spec-label">Feature</p>
+                        <p id="specFeature" class="spec-value"></p>
+                    </div>
+                </div>
+                
+                <a href="#inquiry" class="modal-cta" onclick="closeModal()">Inquire for Custom Order</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(title, tag, desc, img, material, size, layers, feature) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalTag').innerText = tag;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('modalImg').src = img;
+            document.getElementById('specMaterial').innerText = material;
+            document.getElementById('specSize').innerText = size;
+            document.getElementById('specLayers').innerText = layers;
+            document.getElementById('specFeature').innerText = feature;
+            document.getElementById('productModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeModal(e) {
+            document.getElementById('productModal').style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+    </script>
 </body>
 </html>
